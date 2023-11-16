@@ -5,8 +5,17 @@
 #include "spacing.h"
 #include "text.h"
 #include "game.h"
+#include <vector>
 
 using namespace std;
+
+void printNumbers(int* n, int iteration, vector<int>&result) { //used an iterator and variable n to count value 1 through 25 and store them in a vector
+	if (*n <= 25) {
+		result.push_back(*n); //store the number in a vector
+		(*n)++; //pointer
+		printNumbers(n, iteration + 1, result);
+	}
+}
 
 int main()
 {
@@ -79,20 +88,37 @@ int main()
 			cout << "2) Fighter" << endl;
 			cin >> character;
 
-			Model adv;
+			Model adv; //pull variable adv from class model
 
-			if (character == 1) {
-				adv = Model("Wizard", 350, 35, 55, 0);
+			if (character == 1) { //if a specific number is typed in then your character will be set to the character
+				adv = Model("Wizard", 350, 40, 55, 0);
 			}
 			else if (character == 2) {
-				adv = Model("Fighter", 400, 40, 65, 0);
+				adv = Model("Fighter", 375, 40, 65, 0);
 			}
 
 			//prints spacing.cpp
 			printspacing.spacing_print();
 
 			int advType;
-			int spaCounter = 50; //counts turns down from 50
+			int spaCounter = 25; //counts turns down from 25
+
+			int SNum = 1;
+			int* PNum = &SNum;
+			//print out how many turns the player will have
+			vector<int> result;  // Vector to store the numbers
+			printNumbers(PNum, 1, result);
+
+			cout << "You will have this number of turns to reach the end of the maze, don't die! Good Luck!" << endl;
+
+			// Print the numbers stored in the vector
+			cout << "Numbers of turns that will be taken:" << std::endl;
+			for (int num : result) {
+				cout << num << " ";
+			}
+			cout << endl;
+			cout << endl;
+			cout << endl;
 			////////////////////////////////////////////////////////////////////////////////////////////
 
 			//print start_path.cpp
@@ -136,21 +162,24 @@ int main()
 
 				std::cout << "You encountered a Dretch!" << '\n';
 
-				while (!isDead(adv) && !isDead(boss1)) {
+				while (!isDead(adv) && !isDead(boss1)) { //while player and enemy are both not dead
 					do {
 						std::cout << '\n'
 							<< "1 Normal Attack - 2 Special Attack (" << spaCounter
 							<< ") : ";
-						std::cin >> advType;
+						std::cin >> advType; //enter what attack you want to use
 					} while (advType < 1 || advType > 2);
 
-					fight(advType, spaCounter, adv, boss1, rnd);
+					fight(advType, spaCounter, adv, boss1, rnd); //declare function fight to begin the fight sequence
 				}
 
-				if (isDead(boss1)) {
+				if (isDead(boss1)) { //if enemy dead then you win
 					std::cout << "You defeated the Dretch! You Win!" << '\n';
+
+					//prints spacing.cpp
+					printspacing.spacing_print();
 				}
-				else {
+				else { //if the player is dead
 					std::cout << "You are DEAD!" << '\n';
 				}
 				//////////////////////////////////////////////////////////////////////////////////////////////
@@ -195,21 +224,21 @@ int main()
 
 					std::cout << "You encountered a Young Black Dragon!" << '\n';
 
-					while (!isDead(adv) && !isDead(boss2)) {
+					while (!isDead(adv) && !isDead(boss2)) {//while player and enemy are both not dead
 						do {
 							std::cout << '\n'
 								<< "1 Normal Attack - 2 Special Attack (" << spaCounter
 								<< ") : ";
-							std::cin >> advType;
+							std::cin >> advType;//enter what attack you want to use
 						} while (advType < 1 || advType > 2);
 
-						fight(advType, spaCounter, adv, boss2, rnd);
+						fight(advType, spaCounter, adv, boss2, rnd);//declare function fight to begin the fight sequence
 					}
 
-					if (isDead(boss2)) {
+					if (isDead(boss2)) {//if enemy dead then you win
 						std::cout << "You defeated the Young Black Dragon! You Win!" << '\n';
 					}
-					else {
+					else {//if the player is dead
 						std::cout << "You are DEAD!" << '\n';
 					}
 					////////////////////////////////////////////////////////////////////////////////////////////
@@ -230,21 +259,21 @@ int main()
 
 					std::cout << "You encountered a Displacer Beast!" << '\n';
 
-					while (!isDead(adv) && !isDead(boss3)) {
+					while (!isDead(adv) && !isDead(boss3)) {//while player and enemy are both not dead
 						do {
 							std::cout << '\n'
 								<< "1 Normal Attack - 2 Special Attack (" << spaCounter
 								<< ") : ";
-							std::cin >> advType;
+							std::cin >> advType;//enter what attack you want to use
 						} while (advType < 1 || advType > 2);
 
-						fight(advType, spaCounter, adv, boss3, rnd);
+						fight(advType, spaCounter, adv, boss3, rnd);//declare function fight to begin the fight sequence
 					}
 
-					if (isDead(boss3)) {
+					if (isDead(boss3)) {//if enemy dead then you win
 						std::cout << "You defeated the Displacer Beast! You Win!" << '\n';
 					}
-					else {
+					else {//if the player is dead
 						std::cout << "You are DEAD!" << '\n';
 					}
 					/////////////////////////////////////////////////////////////////////////////////////////////
@@ -268,21 +297,24 @@ int main()
 
 				std::cout << "You encountered a Manes!" << '\n';
 
-				while (!isDead(adv) && !isDead(boss5)) {
+				while (!isDead(adv) && !isDead(boss5)) {//while player and enemy are both not dead
 					do {
 						std::cout << '\n'
 							<< "1 Normal Attack - 2 Special Attack (" << spaCounter
 							<< ") : ";
-						std::cin >> advType;
+						std::cin >> advType;//enter what attack you want to use
 					} while (advType < 1 || advType > 2);
 
-					fight(advType, spaCounter, adv, boss5, rnd);
+					fight(advType, spaCounter, adv, boss5, rnd);//declare function fight to begin the fight sequence
 				}
 
-				if (isDead(boss5)) {
+				if (isDead(boss5)) {//if enemy dead then you win
 					std::cout << "You defeated the Manes! You Win!" << '\n';
+
+					//prints spacing.cpp
+					printspacing.spacing_print();
 				}
-				else {
+				else {//if the player is dead
 					std::cout << "You are DEAD!" << '\n';
 				}
 				//////////////////////////////////////////////////////////////////////////////////////////////////
@@ -352,21 +384,21 @@ int main()
 
 						std::cout << "You are encounter a Lich!" << '\n';
 
-						while (!isDead(adv) && !isDead(boss4)) {
+						while (!isDead(adv) && !isDead(boss4)) {//while player and enemy are both not dead
 							do {
 								std::cout << '\n'
 									<< "1 Normal Attack - 2 Special Attack (" << spaCounter
 									<< ") : ";
-								std::cin >> advType;
+								std::cin >> advType;//enter what attack you want to use
 							} while (advType < 1 || advType > 2);
 
-							fight(advType, spaCounter, adv, boss4, rnd);
+							fight(advType, spaCounter, adv, boss4, rnd);//declare function fight to begin the fight sequence
 						}
 
-						if (isDead(boss4)) {
+						if (isDead(boss4)) {//if enemy dead then you win
 							std::cout << "You defeated the Lich! You Win!" << '\n';
 						}
-						else {
+						else {//if the player is dead
 							std::cout << "You are DEAD!" << '\n';
 						}
 						/////////////////////////////////////////////////////////////////////////////////////
@@ -416,21 +448,21 @@ int main()
 
 							std::cout << "You encountered a Displacer Beast!" << '\n';
 
-							while (!isDead(adv) && !isDead(boss6)) {
+							while (!isDead(adv) && !isDead(boss6)) {//while player and enemy are both not dead
 								do {
 									std::cout << '\n'
 										<< "1 Normal Attack - 2 Special Attack (" << spaCounter
 										<< ") : ";
-									std::cin >> advType;
+									std::cin >> advType;//enter what attack you want to use
 								} while (advType < 1 || advType > 2);
 
-								fight(advType, spaCounter, adv, boss6, rnd);
+								fight(advType, spaCounter, adv, boss6, rnd);//declare function fight to begin the fight sequence
 							}
 
-							if (isDead(boss6)) {
+							if (isDead(boss6)) {//if enemy dead then you win
 								std::cout << "You defeated the Displacer Beast! You Win!" << '\n';
 							}
-							else {
+							else {//if the player is dead
 								std::cout << "You are DEAD!" << '\n';
 							}
 							////////////////////////////////////////////////////////////////////////////////////
@@ -451,21 +483,21 @@ int main()
 
 							std::cout << "You encountered a Young Black Dragon!" << '\n';
 
-							while (!isDead(adv) && !isDead(boss7)) {
+							while (!isDead(adv) && !isDead(boss7)) {//while player and enemy are both not dead
 								do {
 									std::cout << '\n'
 										<< "1 Normal Attack - 2 Special Attack (" << spaCounter
 										<< ") : ";
-									std::cin >> advType;
+									std::cin >> advType;//enter what attack you want to use
 								} while (advType < 1 || advType > 2);
 
-								fight(advType, spaCounter, adv, boss7, rnd);
+								fight(advType, spaCounter, adv, boss7, rnd);//declare function fight to begin the fight sequence
 							}
 
-							if (isDead(boss7)) {
+							if (isDead(boss7)) {//if enemy dead then you win
 								std::cout << "You defeated the Young Black Dragon! You Win!" << '\n';
 							}
-							else {
+							else {//if the player is dead
 								std::cout << "You are DEAD!" << '\n';
 							}
 							/////////////////////////////////////////////////////////////////////////////////////
@@ -544,21 +576,21 @@ int main()
 
 							std::cout << "You encountered a Displacer Beast!" << '\n';
 
-							while (!isDead(adv) && !isDead(boss8)) {
+							while (!isDead(adv) && !isDead(boss8)) {//while player and enemy are both not dead
 								do {
 									std::cout << '\n'
 										<< "1 Normal Attack - 2 Special Attack (" << spaCounter
 										<< ") : ";
-									std::cin >> advType;
+									std::cin >> advType;//enter what attack you want to use
 								} while (advType < 1 || advType > 2);
 
-								fight(advType, spaCounter, adv, boss8, rnd);
+								fight(advType, spaCounter, adv, boss8, rnd);//declare function fight to begin the fight sequence
 							}
 
-							if (isDead(boss8)) {
+							if (isDead(boss8)) {//if enemy dead then you win
 								std::cout << "You defeated the Displacer Beast! You Win!" << '\n';
 							}
-							else {
+							else {//if the player is dead
 								std::cout << "You are DEAD!" << '\n';
 							}
 							//////////////////////////////////////////////////////////////////////////////////////
@@ -579,21 +611,21 @@ int main()
 
 							std::cout << "You encountered a Young Black Dragon!" << '\n';
 
-							while (!isDead(adv) && !isDead(boss9)) {
+							while (!isDead(adv) && !isDead(boss9)) {//while player and enemy are both not dead
 								do {
 									std::cout << '\n'
 										<< "1 Normal Attack - 2 Special Attack (" << spaCounter
 										<< ") : ";
-									std::cin >> advType;
+									std::cin >> advType;//enter what attack you want to use
 								} while (advType < 1 || advType > 2);
 
-								fight(advType, spaCounter, adv, boss9, rnd);
+								fight(advType, spaCounter, adv, boss9, rnd);//declare function fight to begin the fight sequence
 							}
 
-							if (isDead(boss9)) {
+							if (isDead(boss9)) {//if enemy dead then you win
 								std::cout << "You defeated the Young Black Dragon! You Win!" << '\n';
 							}
-							else {
+							else {//if the player is dead
 								std::cout << "You are DEAD!" << '\n';
 							}
 							/////////////////////////////////////////////////////////////////////////////////
@@ -615,21 +647,21 @@ int main()
 
 						std::cout << "You are encounter a Lich!" << '\n';
 
-						while (!isDead(adv) && !isDead(boss10)) {
+						while (!isDead(adv) && !isDead(boss10)) {//while player and enemy are both not dead
 							do {
 								std::cout << '\n'
 									<< "1 Normal Attack - 2 Special Attack (" << spaCounter
 									<< ") : ";
-								std::cin >> advType;
+								std::cin >> advType;//enter what attack you want to use
 							} while (advType < 1 || advType > 2);
 
-							fight(advType, spaCounter, adv, boss10, rnd);
+							fight(advType, spaCounter, adv, boss10, rnd);//declare function fight to begin the fight sequence
 						}
 
-						if (isDead(boss10)) {
+						if (isDead(boss10)) {//if enemy dead then you win
 							std::cout << "You defeated the Lich! You Win!" << '\n';
 						}
-						else {
+						else {//if the player is dead
 							std::cout << "You are DEAD!" << '\n';
 						}
 						//////////////////////////////////////////////////////////////////////////////////////
