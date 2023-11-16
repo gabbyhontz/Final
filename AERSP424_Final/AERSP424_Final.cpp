@@ -91,10 +91,10 @@ int main()
 			Model adv; //pull variable adv from class model
 
 			if (character == 1) { //if a specific number is typed in then your character will be set to the character
-				adv = Model("Wizard", 350, 40, 55, 0);
+				adv = Model("Wizard", 350, 38, 65, 0);
 			}
 			else if (character == 2) {
-				adv = Model("Fighter", 375, 40, 65, 0);
+				adv = Model("Fighter", 375, 40, 55, 0);
 			}
 
 			//prints spacing.cpp
