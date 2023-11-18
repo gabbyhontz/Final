@@ -13,9 +13,9 @@ void text::bats_print() {
 }
 
 void text::bones_print() {
-	cout << "You carefully step through the piles of bones. Every once in a while you can feel the crack of the bones underneath " << endl;
+	cout << "You carefully step through the piles of bones. Every once in a while you can feel the crack of the bones underneath your " << endl;
 	cout << "boots. You come to an opening in the hallway that leads to a large room decorated with chandelers covered in cob webs." << endl;
-	cout << "All of a sudden brick are being flung across the room and a huge monster emerges from the wall." << endl;
+	cout << "All of a sudden brick are being flung across the room and a huge monster emerges from its phylactery." << endl;
 	cout << endl;
 	cout << endl;
 
@@ -39,9 +39,9 @@ void text::congrats_mini_print() {
 	cout << endl;
 	cout << endl;
 	cout << "You just defeated a monster and can't believe what you just encountered. What kind of madness is waiting ahead for you," << endl;
-	cout << "you wonder. You continue to walk down the lit path and come to another cross roads. This time you can go straight down " << endl;
-	cout << "a path that is covered in vines or you can go to the right down a path that is covered in snakes. You must decide which " << endl;
-	cout << "path to go down quickly in fear of possible monsters that lerk behind you. " << endl;
+	cout << "you wonder. You continue to walk down the path and come to another cross roads. This time you can go down two paths." << endl;
+	cout << "You have no time to analyze the paths and want to get out as quick as you can. You must decide which path to go down" << endl;
+	cout << "quickly in fear of possible monsters that lurk behind you. " << endl;
 	cout << endl;
 }
 
@@ -62,7 +62,7 @@ void text::directions_print() {
 
 void text::first_split_print() {
 	cout << "You are met with a split in the path. You can go right down a quiet path with one faint torch lit up in the distance," << endl;
-	cout << "or you can go down the path to the right which is pitch black and has the sounds of monsters echoing through out." << endl;
+	cout << "or you can go down the path to the left which is pitch black and has the sounds of monsters echoing through out." << endl;
 	cout << endl;
 	cout << "Do you choose to go down the lit path to the right or the dark monster ridden path to the left?" << endl;
 	cout << "1) right " << endl; //white path
@@ -71,15 +71,15 @@ void text::first_split_print() {
 
 void text::mini_encounter_print() {
 	cout << "You continue walking down the lit path. All of a sudden you see a dark shadow bolt across the hall and then disappear." << endl;
-	cout << "You hear the sound of screatching in the distance and then all of a sudden it goes quiet. From the shadows a monster" << endl;
+	cout << "You hear the sound of screeching in the distance and then all of a sudden it goes quiet. From the shadows a monster" << endl;
 	cout << "appears. You will not be allowed past the monster until he is defeated. Lets start the battle. To battle enemies you can" << endl;
-	cout << "pick between what attack or spell you would like to cast. Each item deals different damage so be careful." << endl;
+	cout << "pick between normal or special attack you would like to cast. Each item deals different damage so be careful." << endl;
 	cout << endl;
 	cout << endl;
 }
 
 void text::qandd_print() {
-	cout << "You continue to walk down the scarily quiet and dark path. With every step you take you fear that anothe monster will " << endl;
+	cout << "You continue to walk down the scarily quiet and dark path. With every step you take you fear that another monster will " << endl;
 	cout << "jump out at you. After some time you reach another cross roads where you can travel straight or down a path littered " << endl;
 	cout << "with bones or a path crawling with thousands of bugs." << endl;
 	cout << endl;
@@ -90,7 +90,7 @@ void text::qandd_print() {
 
 void text::snakes_print() {
 	cout << "As you step through the path filled with snakes you realize that the snakes are moving to make room for you to walk." << endl;
-	cout << "You slowly tip toe through the snake fill hallway making sure not to anger the snakes. You fear don't know much" << endl;
+	cout << "You slowly tip toe through the snake filled hallway making sure not to anger the snakes. You fear you don't know much" << endl;
 	cout << "about snakes so you aren't sure if these ones are harmful or not. You eventually reach an opening that leads into a" << endl;
 	cout << "large room. All of a sudden a large crack is heard and a large animal approaches you." << endl;
 	cout << endl;
@@ -147,8 +147,8 @@ void text::title_print() {
 
 void text::vines_print() {
 	cout << "You push through the thick vines cascading through out the hallway. Eventually you make it to a clearing and you are " << endl;
-	cout << "greated by the back of another monster. This one is much bigger than the first one you encountered." << endl;
-	cout << "You don't know what to think, but the monster must be killed, so you take a deap breath and prepare for battle." << endl;
+	cout << "greeted by the back of another monster. This one is much bigger than the first one you encountered." << endl;
+	cout << "You don't know what to think, but the monster must be killed, so you take a deep breath and prepare for battle." << endl;
 	cout << endl;
 	cout << endl;
 
