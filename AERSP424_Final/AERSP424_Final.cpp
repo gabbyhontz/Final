@@ -91,10 +91,10 @@ int main()
 			Model adv; //pull variable adv from class model
 
 			if (character == 1) { //if a specific number is typed in then your character will be set to the character
-				adv = Model("Wizard", 350, 38, 65, 0);
+				adv = Model("Wizard", 350, 30, 65, 0);
 			}
 			else if (character == 2) {
-				adv = Model("Fighter", 375, 40, 55, 0);
+				adv = Model("Fighter", 375, 25, 55, 0);
 			}
 
 			//prints spacing.cpp
@@ -158,7 +158,7 @@ int main()
 
 				//////////////////////////////////////////////////////////////////////////////////////////////
 				/*input mini boss character*/ 
-				Model boss1("Dretch", 50, 1, 2, 5); //mini boss 1
+				Model boss1("Dretch", 70, 7, 10, 12); //mini boss 1
 
 				std::cout << "You encountered a Dretch!" << '\n';
 
@@ -220,7 +220,7 @@ int main()
 
 					////////////////////////////////////////////////////////////////////////////////////////////
 					//insert small boss
-					Model boss2("Young Black Dragon", 200, 5, 7, 10); //small boss
+					Model boss2("Young Black Dragon", 200, 9, 14, 11); //small boss
 
 					std::cout << "You encountered a Young Black Dragon!" << '\n';
 
@@ -293,7 +293,7 @@ int main()
 
 				//////////////////////////////////////////////////////////////////////////////////////////////////
 				/*input mini boss character*/ 
-				Model boss5("Manes", 50, 3, 2, 7); //mini boss 2
+				Model boss5("Manes", 70, 3, 2, 7); //mini boss 2
 
 				std::cout << "You encountered a Manes!" << '\n';
 
@@ -479,7 +479,7 @@ int main()
 
 							////////////////////////////////////////////////////////////////////////////////////
 							//insert small boss
-							Model boss7("Young Black Dragon", 200, 5, 7, 10); //small boss
+							Model boss7("Young Black Dragon", 200, 9 ,14, 11); //small boss
 
 							std::cout << "You encountered a Young Black Dragon!" << '\n';
 
@@ -607,7 +607,7 @@ int main()
 
 							///////////////////////////////////////////////////////////////////////////////////
 							//insert small boss
-							Model boss9("Young Black Dragon", 200, 5, 7, 10); //small boss
+							Model boss9("Young Black Dragon", 200, 9, 14, 11); //small boss
 
 							std::cout << "You encountered a Young Black Dragon!" << '\n';
 
